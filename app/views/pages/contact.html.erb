@@ -1,0 +1,23 @@
+<h1>CONTACT</h1>
+<div class="contact-form">
+  <div class="field">
+    <%= label_tag :full_name %><br>
+    <%= text_field_tag :full_name %>  
+  </div>
+  <div class="field">
+    <%= label_tag :email %><br>
+    <%= text_field_tag :email %>  
+  </div>
+  <div class="field">
+    <%= label_tag :message %><br>
+    <%= text_area_tag :message %>  
+  </div>
+  <div class="field">
+    <%= link_to "Submit", "#", class: "contact-submit" %>
+  </div>
+
+  <div class="contact-submit-results" style="display:none">
+
+  </div>
+
+</div>
