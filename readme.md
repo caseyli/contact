@@ -1,6 +1,12 @@
 # Simple Rails Contact Form
 
-This is a standard contact Javscript that will hopefully be turned into a gem or a rails engine in the future.
+This is a simple contact form to be used in Rails applications that will hopefully be turned into a gem or a rails engine in the future.
+Right now it includes sample code for
+
+- The contact form
+- The javascript to submit the contact form
+- The controller action to respond to the AJAX submit
+- The mailers and corresponding views
 
 ## Installation
 
