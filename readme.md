@@ -18,7 +18,7 @@ You'll need to add any fields that you need.
 
 Take a look at the PagesController.
 
-You'll need to edit the fields that you are receiving.
+You'll need to edit the permitted_contact_params.
 
 ### Javascript
 
@@ -29,5 +29,3 @@ You'll need to edit the fields that you're submitting, and the AJAX call.
 ### Mailers
 
 Take a look at the AdminMailer and the CustomerMailer and their corresponding views.
-
-You'll need to edit the fields that are coming in.
