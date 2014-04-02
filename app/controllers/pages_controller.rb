@@ -7,17 +7,10 @@ class PagesController < ApplicationController
     @message = ""
     
     if request.post?
-      if valid_contact_form?(params)
-        full_name = params[:full_name]
-        email = params[:email]
-        cell_phone = params[:cell_phone]
-        message = params[:message]
-        allow_sms_response = params[:allow_sms_response]
-
-        AdminMailer.customer_contact(full_name, email, cell_phone, allow_sms_response, message).deliver
-        CustomerMailer.contact_confirmation(full_name, email, cell_phone, allow_sms_response, message).deliver
+      if valid_contact_form?
+        AdminMailer.customer_contact(contact_params).deliver
+        CustomerMailer.contact_confirmation(contact_params).deliver
         @success = true
-
       else
         @success = false
         @message = "At least one of e-mail or cell phone is required"
@@ -32,8 +25,16 @@ class PagesController < ApplicationController
 
   private
 
-    def valid_contact_form(params)
-      params[:cell_phone].present? ||
-      params[:email].present?
-    end
+  def permitted_contact_params
+    ["full_name", "email", "cell_phone", "allow_sms_response", "message"]
+  end
+
+  def contact_params
+    params.keep_if { |k| permitted_contact_params.include? k }
+  end
+
+  def valid_contact_form?
+    params[:cell_phone].present? ||
+    params[:email].present?
+  end
 end

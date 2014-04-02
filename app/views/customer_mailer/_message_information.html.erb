@@ -1,0 +1,5 @@
+<ul>
+  <% @params.each do |k, v| %>
+    <li><%= "#{k.humanize}: #{v}" %></li>
+  <% end %>
+</ul>
