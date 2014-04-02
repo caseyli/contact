@@ -7,15 +7,11 @@ function submitContactSubmit() {
   /* Gather Contact Form Values - YOUR FIELDS HERE */
   var full_name = $("#full_name").val();
   var email = $("#email").val();
-  var cell_phone = $("#cell_phone").val();
   var message = $("#message").val();
-  var allow_sms_response = $("#allow_sms_response:checked").length > 0;
 
   /* Contact Form Elements */
   var submitElement = $(this);
   var resultsElement = $($(this).closest(".contact-form").siblings(".contact-submit-results")[0]);
-
-  
 
   /* Put into waiting state */
   putElementIntoWaitState(submitElement, true);
@@ -27,9 +23,7 @@ function submitContactSubmit() {
     data: { 
         full_name : full_name, 
         email : email, 
-        cell_phone : cell_phone, 
-        message : message, 
-        allow_sms_response : allow_sms_response },
+        message : message },
     dataType: "json",
     success:function(data, textStatus, jqXHR){
       if(data.success) {
