@@ -1,4 +1,4 @@
-# Simple Contact Form
+# Simple Rails Contact Form
 
 This is a standard contact Javscript that will hopefully be turned into a gem or a rails engine in the future.
 
